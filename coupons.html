@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<head>
+
+
+<title>Mbakdiskon API Developers Guide</title>
+
+<style type="text/css" media="all">@import url('index_files/userguid.css');</style>
+<link rel="stylesheet" type="text/css" media="all" href="index_files/userguie.css">
+
+<script type="text/javascript" src="index_files/nav00000.js"></script>
+<script type="text/javascript" src="index_files/prototyp.js"></script>
+<script type="text/javascript" src="index_files/moo00000.js"></script>
+<script type="text/javascript" src="index_files/user_gui.js"></script>
+
+<meta http-equiv="expires" content="-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta name="robots" content="all">
+<meta name="author" content="Ahmad Priatama">
+<meta name="description" content="Lintas.me API Developers Guide">
+
+</head>
+<body>
+
+<!-- START NAVIGATION -->
+<div id="nav"><div id="nav_inner"><script type="text/javascript">create_menu('../');</script></div></div>
+<div id="nav2"><a name="top"></a><a href="javascript:void(0);" onclick="myHeight.toggle();"><img src="index_files/nav_togg.jpg" width="154" height="43" border="0" title="Toggle Table of Contents" alt="Toggle Table of Contents"></a></div>
+<div id="masthead">
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td><h1>Mbakdiskon Developers Guide v.0.0.1</h1></td>
+<td id="breadcrumb_right"><a href="http://www.lintas.me/developer/general/toc.html">Table of Contents Page</a></td>
+</tr>
+</table>
+</div>
+<!-- END NAVIGATION -->
+
+
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td id="breadcrumb">
+<a href="http://mbakdiskon.com">Mbakdiskon API</a> &nbsp;›&nbsp; Coupons
+</td>
+<td id="searchbox"><form method="get" action="http://www.google.com/search"><input type="hidden" name="as_sitesearch" id="as_sitesearch" value="">Search User Guide&nbsp; <input type="text" class="input" style="width:200px;" name="q" id="q" size="31" maxlength="255" value>&nbsp;<input type="submit" class="submit" name="sa" value="Go"></form></td>
+</tr>
+</table>
+
+
+
+<br clear="all">
+
+<!--div class="center"><img src="index_files/photo000.png" width="150" height="150" border="0" alt="CodeIgniter"></div-->
+
+
+<!-- START CONTENT -->
+<div id="content">
+
+<h2>Menggunakan API Coupons</h2>
+
+<p>Fungsi API ini adalah untuk mendapatkan list coupon yang dimiliki</p>
+<p><var>login required</var></p>
+
+<p>URL Endpoint :</p>
+<code>
+	http://mbakdiskon.com/api/<var>coupons</var>/
+</code>
+<h2>METODE API :</h2>
+<p><strong>GET</strong></p>
+
+<h2>Parameter API :</h2>
+<ul>
+	<li>language :
+		<ul>
+			<li>Harus selalu disertakan</li>
+			<li>value yang tersedia adalah: <samp>id_id</samp></li>
+		</ul>
+	</li> 
+	<li>rt : return type (well formed xml)</li>
+</ul>
+
+<h2>Example : </h2>
+<code>
+http://mbakdiskon.com/api/coupons/language/id_id/
+</code>
+<h2>Result : </h2>
+<pre>
+&lt;couponic&gt;
+    &lt;status&gt;true&lt;/status&gt;
+    &lt;errorCode&gt;0&lt;/errorCode&gt;
+    &lt;errorMessage/&gt;
+    &lt;coupons&gt;
+        &lt;coupon&gt;
+            &lt;company&gt;
+                &lt;id&gt;135&lt;/id&gt;
+                &lt;name&gt;Waffle Days&lt;/name&gt;
+                &lt;address&gt;Jalan Colombo Nomor 4, Samirono, Sleman&lt;/address&gt;
+                &lt;website&gt;http://www.twitter.com/waffledays&lt;/website&gt;
+            &lt;/company&gt;
+            &lt;id&gt;8518&lt;/id&gt;
+            &lt;hashid&gt;#182-11888-B82555DBAF7E&lt;/hashid&gt;
+            &lt;coupon_status&gt;available&lt;/coupon_status&gt;
+            &lt;title&gt;[Special Offer] 30% OFF: Waffle, Snack, and Beverage Packages from Waffle Days | Saturday Waffle+French Fries+Hot Cappuccino/Hot Chocolate now only Rp 20.000 (Normal Rp 29.000)&lt;/title&gt;
+            &lt;date&gt;2012-09-03 13:45&lt;/date&gt;
+            &lt;printable&gt;true&lt;/printable&gt;
+            &lt;image&gt;http://mbakdiskon.com/storage/32000/1002/21f067009fa2860b53bac080533e154f.jpg&lt;/image&gt;
+            &lt;fine_print&gt;Kupon diskon yang sudah dibeli tidak dapat diuangkan. Apabila deal tidak tercapai, user berhak untuk menentukan apakah uang ingin dikembalikan atau dikonversi menjadi kredit yang bisa digunakan customer untuk memperoleh deal - deal lainnya.
+
+Kupon yang tidak ditukarkan selama periode penukaran tidak dapat diuangkan dan tidak dapat dialihkan ke deal lainnya.
+---------------------------------------------------------
+Kuota minimal deal ini adalah 5 pembeli.
+
+Setiap customer bisa membeli lebih dari satu kupon diskon.
+
+Deadline pembayaran adalah hari Kamis 6 September 2012 pukul 23.59 (Cash-Offline &amp; Transfer Bank).
+
+Kupon hanya dapat ditukarkan selama periode penukaran yang sudah ditentukan yaitu tanggal 8 September - 26 September 2012.
+
+Kupon yang tidak ditukarkan selama periode penukaran tidak dapat di uangkan dan tidak dapat dialihkan ke deal lainnya.
+
+Kupon wajib diPRINT untuk ditukarkan.
+
+Kupon wajib diBAWA saat ditukarkan.
+
+Kupon ini hanya berlaku untuk DINE IN/makan di tempat.
+
+Jam Operasional Waffle Days : Senin - Minggu (kecuali hari Kamis) pukul 17.00 - 23.00 WIB.
+---------------------------------------------------------
+Untuk Pembayaran Transfer : Mandiri 137 000 534 0258 / BCA 037 3054 884 a.n MR Anggit Tut Pinilih
+
+Pembayaran secara Cash Offline dapat di Platinum Internet Cafe Jalan Kaliurang Km 5,5 Sleman, Yogyakarta. 
+
+Pembayaran secara Cash Offline dapat di Plaza Internet Cafe Jalan Taman Siswa no 157, Yogyakarta. 
+
+Pembayaran secara Cash Offline dapat di Radio SwaragamaFM di Kompleks Bulaksumur H-5.
+
+*Harap diperhatikan pembayaran Offline SWARAGAMA hanya dapat dilayani SENIN-JUM'AT Pukul 09.00 - 16.00 WIB
+
+Pembayaran secara Cash Offline di Platinum dan Plaza Internet Cafe dilayani hingga hari Kamis 6 September 2012 pukul 23.59 WIB.
+            &lt;/fine_print&gt;
+            &lt;code&gt;1241930804&lt;/code&gt;
+            &lt;barcode&gt;http://mbakdiskon.com/deal/barcode/barcode/1241930804&lt;/barcode&gt;
+            &lt;redeem&gt;
+                &lt;loc&gt;
+                    &lt;id&gt;168&lt;/id&gt;
+                    &lt;address&gt;Jalan Colombo Nomor 4, Samirono, Sleman
+Yogyakarta
+Indonesia
+                    &lt;/address&gt;
+                    &lt;lon&gt;110.381744384766&lt;/lon&gt;
+                    &lt;lat&gt;-7.77702283859253&lt;/lat&gt;
+                &lt;/loc&gt;
+            &lt;/redeem&gt;
+        &lt;/coupon&gt;
+        &lt;coupon&gt;
+            &lt;company&gt;
+                &lt;id&gt;135&lt;/id&gt;
+                &lt;name&gt;Waffle Days&lt;/name&gt;
+                &lt;address&gt;Jalan Colombo Nomor 4, Samirono, Sleman&lt;/address&gt;
+                &lt;website&gt;http://www.twitter.com/waffledays&lt;/website&gt;
+            &lt;/company&gt;
+            &lt;id&gt;8519&lt;/id&gt;
+            &lt;hashid&gt;#182-11888-86DC5306816F&lt;/hashid&gt;
+            &lt;coupon_status&gt;available&lt;/coupon_status&gt;
+            &lt;title&gt;[Special Offer] 30% OFF: Waffle, Snack, and Beverage Packages from Waffle Days | Saturday Waffle+French Fries+Hot Cappuccino/Hot Chocolate now only Rp 20.000 (Normal Rp 29.000)&lt;/title&gt;
+            &lt;date&gt;2012-09-03 13:45&lt;/date&gt;
+            &lt;printable&gt;true&lt;/printable&gt;
+            &lt;image&gt;http://mbakdiskon.com/storage/32000/1002/21f067009fa2860b53bac080533e154f.jpg&lt;/image&gt;
+            &lt;fine_print&gt;Kupon diskon yang sudah dibeli tidak dapat diuangkan. Apabila deal tidak tercapai, user berhak untuk menentukan apakah uang ingin dikembalikan atau dikonversi menjadi kredit yang bisa digunakan customer untuk memperoleh deal - deal lainnya.
+
+Kupon yang tidak ditukarkan selama periode penukaran tidak dapat diuangkan dan tidak dapat dialihkan ke deal lainnya.
+---------------------------------------------------------
+Kuota minimal deal ini adalah 5 pembeli.
+
+Setiap customer bisa membeli lebih dari satu kupon diskon.
+
+Deadline pembayaran adalah hari Kamis 6 September 2012 pukul 23.59 (Cash-Offline &amp; Transfer Bank).
+
+Kupon hanya dapat ditukarkan selama periode penukaran yang sudah ditentukan yaitu tanggal 8 September - 26 September 2012.
+
+Kupon yang tidak ditukarkan selama periode penukaran tidak dapat di uangkan dan tidak dapat dialihkan ke deal lainnya.
+
+Kupon wajib diPRINT untuk ditukarkan.
+
+Kupon wajib diBAWA saat ditukarkan.
+
+Kupon ini hanya berlaku untuk DINE IN/makan di tempat.
+
+Jam Operasional Waffle Days : Senin - Minggu (kecuali hari Kamis) pukul 17.00 - 23.00 WIB.
+---------------------------------------------------------
+Untuk Pembayaran Transfer : Mandiri 137 000 534 0258 / BCA 037 3054 884 a.n MR Anggit Tut Pinilih
+
+Pembayaran secara Cash Offline dapat di Platinum Internet Cafe Jalan Kaliurang Km 5,5 Sleman, Yogyakarta. 
+
+Pembayaran secara Cash Offline dapat di Plaza Internet Cafe Jalan Taman Siswa no 157, Yogyakarta. 
+
+Pembayaran secara Cash Offline dapat di Radio SwaragamaFM di Kompleks Bulaksumur H-5.
+
+*Harap diperhatikan pembayaran Offline SWARAGAMA hanya dapat dilayani SENIN-JUM'AT Pukul 09.00 - 16.00 WIB
+
+Pembayaran secara Cash Offline di Platinum dan Plaza Internet Cafe dilayani hingga hari Kamis 6 September 2012 pukul 23.59 WIB.
+            &lt;/fine_print&gt;
+            &lt;code&gt;1061542601&lt;/code&gt;
+            &lt;barcode&gt;http://mbakdiskon.com/deal/barcode/barcode/1061542601&lt;/barcode&gt;
+            &lt;redeem&gt;
+                &lt;loc&gt;
+                    &lt;id&gt;168&lt;/id&gt;
+                    &lt;address&gt;Jalan Colombo Nomor 4, Samirono, Sleman
+Yogyakarta
+Indonesia
+                    &lt;/address&gt;
+                    &lt;lon&gt;110.381744384766&lt;/lon&gt;
+                    &lt;lat&gt;-7.77702283859253&lt;/lat&gt;
+                &lt;/loc&gt;
+            &lt;/redeem&gt;
+        &lt;/coupon&gt;
+        &lt;coupon&gt;
+            &lt;company&gt;
+                &lt;id&gt;135&lt;/id&gt;
+                &lt;name&gt;Waffle Days&lt;/name&gt;
+                &lt;address&gt;Jalan Colombo Nomor 4, Samirono, Sleman&lt;/address&gt;
+                &lt;website&gt;http://www.twitter.com/waffledays&lt;/website&gt;
+            &lt;/company&gt;
+            &lt;id&gt;8522&lt;/id&gt;
+            &lt;hashid&gt;#182-11888-86DC5306816F&lt;/hashid&gt;
+            &lt;coupon_status&gt;available&lt;/coupon_status&gt;
+            &lt;title&gt;[Special Offer] 30% OFF: Waffle, Snack, and Beverage Packages from Waffle Days | Saturday Waffle+French Fries+Hot Cappuccino/Hot Chocolate now only Rp 20.000 (Normal Rp 29.000)&lt;/title&gt;
+            &lt;date&gt;2012-09-03 13:45&lt;/date&gt;
+            &lt;printable&gt;true&lt;/printable&gt;
+            &lt;image&gt;http://mbakdiskon.com/storage/32000/1002/21f067009fa2860b53bac080533e154f.jpg&lt;/image&gt;
+            &lt;fine_print&gt;Kupon diskon yang sudah dibeli tidak dapat diuangkan. Apabila deal tidak tercapai, user berhak untuk menentukan apakah uang ingin dikembalikan atau dikonversi menjadi kredit yang bisa digunakan customer untuk memperoleh deal - deal lainnya.
+
+Kupon yang tidak ditukarkan selama periode penukaran tidak dapat diuangkan dan tidak dapat dialihkan ke deal lainnya.
+---------------------------------------------------------
+Kuota minimal deal ini adalah 5 pembeli.
+
+Setiap customer bisa membeli lebih dari satu kupon diskon.
+
+Deadline pembayaran adalah hari Kamis 6 September 2012 pukul 23.59 (Cash-Offline &amp; Transfer Bank).
+
+Kupon hanya dapat ditukarkan selama periode penukaran yang sudah ditentukan yaitu tanggal 8 September - 26 September 2012.
+
+Kupon yang tidak ditukarkan selama periode penukaran tidak dapat di uangkan dan tidak dapat dialihkan ke deal lainnya.
+
+Kupon wajib diPRINT untuk ditukarkan.
+
+Kupon wajib diBAWA saat ditukarkan.
+
+Kupon ini hanya berlaku untuk DINE IN/makan di tempat.
+
+Jam Operasional Waffle Days : Senin - Minggu (kecuali hari Kamis) pukul 17.00 - 23.00 WIB.
+---------------------------------------------------------
+Untuk Pembayaran Transfer : Mandiri 137 000 534 0258 / BCA 037 3054 884 a.n MR Anggit Tut Pinilih
+
+Pembayaran secara Cash Offline dapat di Platinum Internet Cafe Jalan Kaliurang Km 5,5 Sleman, Yogyakarta. 
+
+Pembayaran secara Cash Offline dapat di Plaza Internet Cafe Jalan Taman Siswa no 157, Yogyakarta. 
+
+Pembayaran secara Cash Offline dapat di Radio SwaragamaFM di Kompleks Bulaksumur H-5.
+
+*Harap diperhatikan pembayaran Offline SWARAGAMA hanya dapat dilayani SENIN-JUM'AT Pukul 09.00 - 16.00 WIB
+
+Pembayaran secara Cash Offline di Platinum dan Plaza Internet Cafe dilayani hingga hari Kamis 6 September 2012 pukul 23.59 WIB.
+            &lt;/fine_print&gt;
+            &lt;code&gt;1061542603&lt;/code&gt;
+            &lt;barcode&gt;http://mbakdiskon.com/deal/barcode/barcode/1061542603&lt;/barcode&gt;
+            &lt;redeem&gt;
+                &lt;loc&gt;
+                    &lt;id&gt;168&lt;/id&gt;
+                    &lt;address&gt;Jalan Colombo Nomor 4, Samirono, Sleman
+Yogyakarta
+Indonesia
+                    &lt;/address&gt;
+                    &lt;lon&gt;110.381744384766&lt;/lon&gt;
+                    &lt;lat&gt;-7.77702283859253&lt;/lat&gt;
+                &lt;/loc&gt;
+            &lt;/redeem&gt;
+        &lt;/coupon&gt;
+        &lt;coupon&gt;
+            &lt;company&gt;
+                &lt;id&gt;159&lt;/id&gt;
+                &lt;name&gt;Bocadillo&lt;/name&gt;
+                &lt;address&gt;Jl. Mpu Tantular 55 Jembatan Merah Gejayan&lt;/address&gt;
+                &lt;website/&gt;
+            &lt;/company&gt;
+            &lt;id&gt;9134&lt;/id&gt;
+            &lt;hashid&gt;#199-12644-FCA89C161EEA&lt;/hashid&gt;
+            &lt;coupon_status&gt;available&lt;/coupon_status&gt;
+            &lt;title&gt;[Discount 41%] Bocadillo Bread + Patatas Bravas + Softdrink from Bocadillo now only Rp 27.500 (Normal Rp 46.500)&lt;/title&gt;
+            &lt;date&gt;2012-09-18 08:51&lt;/date&gt;
+            &lt;printable&gt;false&lt;/printable&gt;
+            &lt;image&gt;http://mbakdiskon.com/storage/32000/1043/ce3cc2c8fd6712bcdaee9fb9d2779f2b.jpg&lt;/image&gt;
+            &lt;fine_print&gt;Kupon diskon yang sudah dibeli tidak dapat diuangkan. 
+
+Apabila deal tidak tercapai, user berhak untuk menentukan apakah uang ingin dikembalikan atau dikonversi menjadi kredit yang bisa digunakan customer untuk memperoleh deal - deal lainnya. 
+
+Kupon yang tidak ditukarkan selama periode penukaran tidak dapat diuangkan dan tidak dapat dialihkan ke deal lainnya. 
+--------------------------------------------------------
+Kuota minimal deal ini adalah 10 pembeli. 
+
+Setiap customer bisa membeli lebih dari satu kupon diskon. 
+
+Deadline pembayaran adalah hari Senin 24 September 2012 pukul 23.59. 
+
+Kupon hanya dapat ditukarkan selama periode penukaran yang sudah ditentukan yaitu tanggal 26 September - 26 Oktober 2012. 
+
+Kupon wajib diPRINT untuk ditukarkan.
+
+Kupon wajib diBAWA saat ditukarkan. 
+
+Hanya untuk Dine In (Tidak dapat Take Away)
+
+Jam Operasional Bocadillo : Pukul 17.00 - 02.00 WIB.
+--------------------------------------------------------
+Untuk Pembayaran Transfer : Mandiri 137 000 534 0258 / BCA 037 3054 884 a.n MR Anggit Tut Pinilih 
+
+Pembayaran secara Cash Offline dapat di Platinum Internet Cafe Jalan Kaliurang Km 5,5 Sleman, Yogyakarta. 
+
+Pembayaran secara Cash Offline dapat di Plaza Internet Cafe Jalan Taman Siswa no 157, Yogyakarta. 
+
+Pembayaran secara Cash Offline dapat di Radio SwaragamaFM di Kompleks Bulaksumur H-5 
+
+*Harap diperhatikan pembayaran Offline SWARAGAMA hanya dapat dilayani SENIN-JUM'AT Pukul 09.00 - 16.00 
+
+Pembayaran secara Cash Offline di Platinum dan Plaza Internet Cafe dilayani hingga hari Senin 24 September 2012 pukul 23.59 WIB
+            &lt;/fine_print&gt;
+            &lt;code&gt;1350508954&lt;/code&gt;
+            &lt;barcode&gt;http://mbakdiskon.com/deal/barcode/barcode/1350508954&lt;/barcode&gt;
+            &lt;redeem&gt;
+                &lt;loc&gt;
+                    &lt;id&gt;184&lt;/id&gt;
+                    &lt;address&gt;Jalan Mpu Tantular Nomor 55 (Jembatan Merah Gejayan ke Selatan) Sleman
+Yogyakarta
+Indonesia
+                    &lt;/address&gt;
+                    &lt;lon&gt;110.396123&lt;/lon&gt;
+                    &lt;lat&gt;-7.766943&lt;/lat&gt;
+                &lt;/loc&gt;
+            &lt;/redeem&gt;
+        &lt;/coupon&gt;
+    &lt;/coupons&gt;
+&lt;/couponic&gt;
+</pre>
+</div>
+<!-- END CONTENT -->
+
+
+<div id="footer">
+<p><a href="#top">Top of Page</a></p>
+<p><a href="http://www.mbakdiskon.com/">Mbakdiskon</a> &nbsp;·&nbsp; Copyright © 2012 &nbsp;·&nbsp; </p>
+</div>
+
+
+
+</body>
+</html>
+<!-- This document saved from http://www.lintas.me/developer/general/popular.html -->

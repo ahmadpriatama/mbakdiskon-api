@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<head>
+
+
+<title>Mbakdiskon API Developers Guide</title>
+
+<style type="text/css" media="all">@import url('index_files/userguid.css');</style>
+<link rel="stylesheet" type="text/css" media="all" href="index_files/userguie.css">
+
+<script type="text/javascript" src="index_files/nav00000.js"></script>
+<script type="text/javascript" src="index_files/prototyp.js"></script>
+<script type="text/javascript" src="index_files/moo00000.js"></script>
+<script type="text/javascript" src="index_files/user_gui.js"></script>
+
+<meta http-equiv="expires" content="-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta name="robots" content="all">
+<meta name="author" content="Ahmad Priatama">
+<meta name="description" content="Lintas.me API Developers Guide">
+
+</head>
+<body>
+
+<!-- START NAVIGATION -->
+<div id="nav"><div id="nav_inner"><script type="text/javascript">create_menu('../');</script></div></div>
+<div id="nav2"><a name="top"></a><a href="javascript:void(0);" onclick="myHeight.toggle();"><img src="index_files/nav_togg.jpg" width="154" height="43" border="0" title="Toggle Table of Contents" alt="Toggle Table of Contents"></a></div>
+<div id="masthead">
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td><h1>Mbakdiskon Developers Guide v.0.0.1</h1></td>
+<td id="breadcrumb_right"><a href="http://www.lintas.me/developer/general/toc.html">Table of Contents Page</a></td>
+</tr>
+</table>
+</div>
+<!-- END NAVIGATION -->
+
+
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+<tr>
+<td id="breadcrumb">
+<a href="http://mbakdiskon.com">Mbakdiskon API</a> &nbsp;›&nbsp; Deal
+</td>
+<td id="searchbox"><form method="get" action="http://www.google.com/search"><input type="hidden" name="as_sitesearch" id="as_sitesearch" value="">Search User Guide&nbsp; <input type="text" class="input" style="width:200px;" name="q" id="q" size="31" maxlength="255" value>&nbsp;<input type="submit" class="submit" name="sa" value="Go"></form></td>
+</tr>
+</table>
+
+
+
+<br clear="all">
+
+<!--div class="center"><img src="index_files/photo000.png" width="150" height="150" border="0" alt="CodeIgniter"></div-->
+
+
+<!-- START CONTENT -->
+<div id="content">
+
+<h2>Menggunakan API Info Deal</h2>
+
+<p>Fungsi API ini adalah untuk mendapatkan info lengkap dari sebuah deal</p>
+
+<p>URL Endpoint :</p>
+<code>
+	http://mbakdiskon.com/api/<var>deal</var>/
+</code>
+<h2>METODE API :</h2>
+<p><strong>GET</strong></p>
+
+<h2>Parameter API :</h2>
+<ul>
+	<li>location :
+		<ul>
+			<li>Harus selalu disertakan</li>
+			<li>value yang tersedia adalah: <samp>1</samp>(Yogyakarta), <samp>2</samp>(Semarang)</a>
+		</ul>
+	</li>
+	<li>language :
+		<ul>
+			<li>Harus selalu disertakan</li>
+			<li>value yang tersedia adalah: <samp>id_id</samp></li>
+		</ul>
+	</li> 
+	<li>id :
+		<ul>
+			<li>Harus selalu disertakan</li>
+			<li>value yang tersedia didapat dari API Deals</li>
+		</ul>
+	</li> 
+	<li>rt : return type (well formed xml)</li>
+</ul>
+
+<h2>Example : </h2>
+<code>
+http://mbakdiskon.com/api/deals/location/1/language/id_id/id/198
+</code>
+<h2>Result : </h2>
+<pre>
+&lt;couponic&gt;
+    &lt;status&gt;true&lt;/status&gt;
+    &lt;errorCode&gt;0&lt;/errorCode&gt;
+    &lt;errorMessage/&gt;
+    &lt;deals&gt;
+        &lt;deal&gt;
+            &lt;id&gt;198&lt;/id&gt;
+            &lt;image&gt;http://mbakdiskon.com/storage/32000/1040/5a2423a458123a3c559a07438a7573e9.jpg&lt;/image&gt;
+            &lt;url&gt;http://mbakdiskon.com/deals/seeinstitute2&lt;/url&gt;
+            &lt;title&gt;[Diskon 50%] Program Khusus SEE Institute &quot;Goes to Cafe&quot; hanya Rp 250.000 (Normal Rp 500.000)&lt;/title&gt;
+            &lt;time_left&gt;140494&lt;/time_left&gt;
+        &lt;/deal&gt;
+        &lt;deal&gt;
+            &lt;id&gt;199&lt;/id&gt;
+            &lt;image&gt;http://mbakdiskon.com/storage/32000/1043/ce3cc2c8fd6712bcdaee9fb9d2779f2b.jpg&lt;/image&gt;
+            &lt;url&gt;http://mbakdiskon.com/deals/bocadillo&lt;/url&gt;
+            &lt;title&gt;[Discount 41%] Bocadillo Bread + Patatas Bravas + Softdrink from Bocadillo now only Rp 27.500 (Normal Rp 46.500)&lt;/title&gt;
+            &lt;time_left&gt;140494&lt;/time_left&gt;
+        &lt;/deal&gt;
+        &lt;deal&gt;
+            &lt;id&gt;202&lt;/id&gt;
+            &lt;image&gt;http://mbakdiskon.com/storage/32000/1047/c7c2df083f5f25c99ca409860476fcdb.jpg&lt;/image&gt;
+            &lt;url&gt;http://mbakdiskon.com/deals/osiskitchen2&lt;/url&gt;
+            &lt;title&gt;[Diskon 37%] Ramen dan Katsudon dari OSIS Kitchen! | Chicken Ramen&lt;/title&gt;
+            &lt;time_left&gt;399694&lt;/time_left&gt;
+        &lt;/deal&gt;
+        &lt;deal&gt;
+            &lt;id&gt;203&lt;/id&gt;
+            &lt;image&gt;http://mbakdiskon.com/storage/32000/1048/a2a3e6d92165d41633728e2daf267c25.jpg&lt;/image&gt;
+            &lt;url&gt;http://mbakdiskon.com/deals/Olelo&lt;/url&gt;
+            &lt;title&gt;[Discount 50%] Voucher for Ice Cream and Beverages from OLELOIce Cream Pudding now only Rp.10.000 (normal Rp 20.000)&lt;/title&gt;
+            &lt;time_left&gt;399694&lt;/time_left&gt;
+        &lt;/deal&gt;
+        &lt;deal&gt;
+            &lt;id&gt;204&lt;/id&gt;
+            &lt;image&gt;http://mbakdiskon.com/storage/32000/1053/49e0a427fd6aa971f738a91274c95557.jpg&lt;/image&gt;
+            &lt;url&gt;http://mbakdiskon.com/deals/kalinaspapakem&lt;/url&gt;
+            &lt;title&gt;[Discount 50%] Traditional Javanese Massage at KALINA SPA now only Rp 77.000 (Normal Rp 154.000)&lt;/title&gt;
+            &lt;time_left&gt;140494&lt;/time_left&gt;
+        &lt;/deal&gt;
+    &lt;/deals&gt;
+&lt;/couponic&gt;
+</pre>
+</div>
+<!-- END CONTENT -->
+
+
+<div id="footer">
+<p><a href="#top">Top of Page</a></p>
+<p><a href="http://www.mbakdiskon.com/">Mbakdiskon</a> &nbsp;·&nbsp; Copyright © 2012 &nbsp;·&nbsp; </p>
+</div>
+
+
+
+</body>
+</html>
+<!-- This document saved from http://www.lintas.me/developer/general/popular.html -->
